@@ -11,65 +11,34 @@
     />
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
-    <title>Document</title>
+    <title>Productos y chat</title>
   </head>
   <body>
-    <h2>Ingrese un nuevo producto</h2>
 
-    <form onsubmit="return addProduct(this)">
-      <label for="title">Producto</label>
-      <input type="text" name="title" id="title"  />
+    <div>
+      <h2>Ingrese un nuevo producto</h2>
 
-      <label for="price">Precio</label>
-      <input type="number" name="price" id="price" />
+      <form onsubmit="return addProduct(this)">
+        <label for="title">Producto</label>
+        <input type="text" name="title" id="title" />
 
-      <label>URL Imagen</label>
-      <input type="text" name="thumbnail" id="thumbnail" />
+        <label for="price">Precio</label>
+        <input type="number" name="price" id="price" />
 
-      <button type="submit">Agregar producto</button>
-    </form>
-    {{#if products.length}}
-  <table class='table table-dark table-striped'>
-    <thead>
-      <tr>
-        <th>Producto</th>
-        <th>Precio</th>
-        <th>Imagen</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each products}}
-        <tr>
-          <th>{{title}}</th>
-          <td>{{price}}</td>
-          <td>
-            <div>
-              <img src={{thumbnail}} alt='Product image' />
-            </div>
-          </td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-{{else}}
-  <div class='message'>
-    <h2>No se encuentra ningun producto</h2>
-    <p>Agregue un producto</p>
-  </div>
-{{/if}}
+        <label>URL Imagen</label>
+        <input type="text" name="thumbnail" id="thumbnail" />
 
-    {{!-- <a href="/productos">
-      <button>Ver todos los productos</button>
-    </a> --}}
-
-    <div id="divProductos">
-
+        <button class="btn btn-info" type="submit">Agregar producto</button>
+      </form>
     </div>
 
+    <a href="/productos">
+      <button>Ver todos los productos</button>
+    </a> 
 
+    <div id="divProductos" class="d-flex flex-wrap gap-3">
 
-
-
+    </div>
 
     <div>
       <form onsubmit="return addMessage(this)">

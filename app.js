@@ -11,7 +11,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-const port = 8080;
+const port = 8080 || process.env.PORT;
 
 var productsRoute = require("./routes/productsRoute");
 var usersRouter = require("./routes/users");
@@ -47,7 +47,6 @@ app.use(function (err, req, res, next) {
 
 //requiero los productos
 const products = require("./src/contenedor");
-console.log(products);
 //array donde se guardan los mensajes
 let messages = [
   { author: "Juan", text: "Hola ¿ Qué tal ?", date: "31/8/2022 - 20:09:21" },
