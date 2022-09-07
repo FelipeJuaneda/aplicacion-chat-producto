@@ -78,6 +78,13 @@ io.on("connection", (socket) => {
     let todo = { messages: messages, products: products.getAll() };
     io.sockets.emit("messages", todo);
   });
+
+  // socket.on("update-product", (data) => {
+  //   console.log(data);
+  //   products.updateProduct(data)
+  //   let todo = { messages: messages, updateProducts: products.updateProduct(data) };
+  //   io.sockets.emit("messages", todo);
+  // });
 });
 
 module.exports = app;

@@ -56,7 +56,7 @@ const addMessage = (e) => {
 };
 
 const addProduct = (e) => {
-  const product = {
+  let product = {
     title: document.getElementById("title").value,
     price: document.getElementById("price").value,
     thumbnail: document.getElementById("thumbnail").value,
@@ -65,6 +65,17 @@ const addProduct = (e) => {
   limpiar();
   return false;
 };
+
+// const updateProduct = (e) => {
+//   let product = {
+//     title: document.getElementById("titlee").value,
+//     price: document.getElementById("pricee").value,
+//     thumbnail: document.getElementById("thumbnaill").value,
+//   };
+//   socket.emit("update-product", product);
+//   console.log(product)
+//   return false;
+// };
 socket.on("messages", (data) => {
   imprimir(data);
 });

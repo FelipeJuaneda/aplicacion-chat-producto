@@ -12,7 +12,7 @@ router.get("/productos", (req, res) => {
 
 router.put("/productos/:id", ({ params, body }, res) => {
   const { id } = params;
-
+console.log(body)
   products.updateProduct(id, body);
 });
 
